@@ -6,7 +6,11 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:ui": "rd /S /Q build && cd ..\\..\\..\\Fullstack\\part3\\phonebook && npm run build && xcopy /E /I /Y build ..\\..\\..\\FullstackBackend\\part03\\phonebook\\build",
+    "deploy": "fly deploy",
+    "deploy:full": "npm run build:ui && npm run deploy",
+    "logs:prod": "fly logs",
+    "lint": "eslint ."
   },
   "author": "Ale maldonado",
   "license": "ISC",
@@ -19,6 +23,11 @@
   },
   "devDependencies": {
     "@flydotio/dockerfile": "^0.2.15",
+    "eslint": "^8.43.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^16.0.1",
+    "eslint-plugin-promise": "^6.1.1",
     "nodemon": "^2.0.22"
   }
 }

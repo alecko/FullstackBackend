@@ -10,3 +10,14 @@ Content-Type: application/json
 ###################
 
 GET http://localhost:3001/api/persons
+
+
+###################
+
+PUT http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+    "name":"nn",
+    "number":"12245"
+}
